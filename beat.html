@@ -6,7 +6,7 @@
 -->
 <html>
     <head>
-		<title>Archie Short - Stealth FPS</title>
+		<title>Archie Short - Beat Down</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -55,35 +55,26 @@
 							<section class="post">
 								<header class="major">
 									
-									<p>FPS Stealth Movement</p>
-                                    <span ><iframe width="560" height="315" src="https://www.youtube.com/embed/v1EUkgpp03M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
+									<p>Beat Down</p>
+                                    <span ><iframe width="560" height="315" src="https://www.youtube.com/embed/082AR4E1Dxk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></span>
 
 								</header>
                                 
-                                
-									<div class="box alt">
-                                        
-										<div class="row gtr-50 gtr-uniform">
-
-
-											<div class="col-4"><span class="image fit"><img src="images/stealth1.png" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/stealth2.png" alt="" /></span></div>
-											<div class="col-4"><span class="image fit"><img src="images/stealth3.png" alt="" /></span></div>
+									
 										
-										</div>
-									</div>
+								
 <br>
-                                    <p>For my final year project I am going to be investigating stealth game AI and how it can respond and interact with the environment, as a precurser to this I thought Id make an FPS controller with all the features I enjoy in stealth games, this includes: </p>
-									<ul>
-										<li>Leaning (in all 8 directions)<ul><li>You can lean with WASD and hold multiple directions at once</li><li>If you hold two inputs in a diagonal direction you don't lean as far as if only held in one direction  </li></ul></li>
-										<li>Stooping under objects when crouched (like in dishonored)<ul><li>When crouched as you move into an object with enough space for your character they will lower down to fit</li><li>Goes to the exact height needed no lower</li><li>You will dynamically go lower or higher as you move between cover (shown in video)</li></ul></li>
-										<li>Vaulting over objects to get higher or ontop of something </li>
-										<li>Step counting currently shown via headbobbing <ul><li>The number of steps you take changes if you're crouched, walking, running and can be changed in inspect</li><li>Its set up to be able to call a function at every step, this can then be used for footstep sounds based on material</li></ul></li>
-
-									  </ul>  
-										
+                                    <p>This was created for a university project, the idea was a prototype so I prototyped most of the tools and features needed to make this a full game. I created a
+                                        structure to keep map the beats in a song to directions for the enemies to spawn as well as the foundations of control of enemy spawn variety and movement of the areas you hit the notes.
+                                         
+                
 									</p>
-									<p>This is not only going to be used as the basis for my final year project though as I have begun working on a gunpoint inspired set of mechanics that allows for a similar style of hacking and environemnt manipulation  </p>
+
+                                    <P>Most of the level's functionality has hard coded timings apart from the beatmap itself which is a csv file that can be randomly generated with some python code I wrote seperate to the engine. The biggest challenge and most fun part of this project
+                                        was the timing, making sure everything is in sync so as the areas you hit the note move about and the enemies always get where they need to be on the beat. 
+                    
+                                    </P>
+
                                     <footer>
                                         <a href="https://github.com/ArchieShortUni/FirstGameJam" class="button">Github Link</a>
                                     </footer>
