@@ -6,7 +6,7 @@
 -->
 <html>
     <head>
-		<title>Archie Short - Thesis Project</title>
+		<title>Archie Short - Thesis AI Project</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -29,7 +29,7 @@
 										<li><a href="crab.html">Covert Crab</a></li>
 										<li><a href="beat.html">Beat Down</a></li>
 										<li><a href="particle.html">Particle Run</a></li>
-										<li><a href="fps.html">Thesis Project</a></li>
+										<li><a href="fps.html">FPS Stealth</a></li>
 										<li><a href="nongame.html">Non Games Projects</a></li>
 										
 									</ul></li>
@@ -55,41 +55,35 @@
 							<section class="post">
 								<header class="major">
 									
-									<p>Thesis Project - In Progress</p>
+									<p>Thesis AI Project</p>
                                     <span ><iframe width="560" height="315" src="https://www.youtube.com/embed/v1EUkgpp03M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
 
 								</header>
-                            
-<br>
-                                    <p>For my final yera project I am currently investigating how to make varied AI for a fps immersive sim while keeping the their actions fair and predictable. This project has included making a fps stealth controller, a Theif: The Dark Project like lighting system for stealth and of course the guards behaviour which is implemented using unreal engines behaviour trees.</p>
-									<p>The FPS stealth controller includes the following features:</p>
-									<ul>
-										<li>Leaning (in all 8 directions)<ul><li>You can lean with WASD and hold multiple directions at once</li><li>If you hold two inputs in a diagonal direction you don't lean as far as if only held in one direction  </li></ul></li>
-										<li>Stooping under objects when crouched (like in dishonored)<ul><li>When crouched as you move into an object with enough space for your character they will lower down to fit</li><li>Goes to the exact height needed no lower</li><li>You will dynamically go lower or higher as you move between cover (shown in video)</li></ul></li>
-										<li>Vaulting over objects to get higher or ontop of something </li>
-										<li>Step counting currently shown via headbobbing <ul><li>The number of steps you take changes if you're crouched, walking, running and can be changed in inspect</li><li>Its set up to be able to call a function at every step, this is used to create footstep sounds that the AI can hear and react to. How loud it is depends on how the player is moving.</li></ul></li>
-
-									  </ul>  
-										
-									</p>
-
-
-									<p>Guards can be assigned traits across the 4 categories of Perception, Relationship, Tenacity and Environment. These directly affect the guards behaviour with how they detect the player, perform their behaviours and react to the environment to give more variation to the AI while still allowing the player to know what they'll do through an inspection UI that lets them see the traits. </p>
+                                
+                                
 									<div class="box alt">
                                         
 										<div class="row gtr-50 gtr-uniform">
 
-                                            
-											<div class="col-12"><span class="image fit"><img src="images/widget2.png" alt="" /></span></div>
-											<p>There is a base behaviour tree with many of the states leading to dynamic behaviours that can be changed at runtime depending on the traits or reaction to the environment. The basic behaviour allows for patrolling, searching, chasing the player with direct combat being an element I will work on later.</p>
-											<div class="col-12"><span class="image fit"><img src="images/behaviourtree.png" alt="" /></span></div>
-											<p>I implemented a rudementory version of Theifs lighting system that lets the player hide in shadows, there are varying levels of light visibility depending on if the head torso and feet are within the light that change how quickly the detection meter of the guards fill up. The guard's light status is also accounted for allowing you to hide bodies in the dark or have them react to a light going out.</p>
-											<div class="col-12"><span class="image fit"><img src="images/light.png" alt="" /></span></div>
 
+											<div class="col-4"><span class="image fit"><img src="images/stealth1.png" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/stealth2.png" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/stealth3.png" alt="" /></span></div>
+										
+										</div>
+									</div>
+<br>
+                                    <p>For my final year project I am going to be investigating stealth game AI and how it can respond and interact with the environment, as a precurser to this I thought Id make an FPS controller with all the features I enjoy in stealth games, this includes: </p>
+									<ul>
+										<li>Leaning (in all 8 directions)<ul><li>You can lean with WASD and hold multiple directions at once</li><li>If you hold two inputs in a diagonal direction you don't lean as far as if only held in one direction  </li></ul></li>
+										<li>Stooping under objects when crouched (like in dishonored)<ul><li>When crouched as you move into an object with enough space for your character they will lower down to fit</li><li>Goes to the exact height needed no lower</li><li>You will dynamically go lower or higher as you move between cover (shown in video)</li></ul></li>
+										<li>Vaulting over objects to get higher or ontop of something </li>
+										<li>Step counting currently shown via headbobbing <ul><li>The number of steps you take changes if you're crouched, walking, running and can be changed in inspect</li><li>Its set up to be able to call a function at every step, this can then be used for footstep sounds based on material</li></ul></li>
 
-
-
-<p> The github currently only has the movement code but the rest will be uploaded when the thesis is complete at the end of April or upon request.</p>
+									  </ul>  
+										
+									</p>
+									<p>This is not only going to be used as the basis for my final year project though as I have begun working on a gunpoint inspired set of mechanics that allows for a similar style of hacking and environemnt manipulation  </p>
                                     <footer>
                                         <a href="https://github.com/ArchieShortUni/FPSStealthPortfolio" class="button">Github Link</a>
                                     </footer>
