@@ -28,7 +28,7 @@
 										<li><a href="echoes.html">Echoes In The Dark</a></li>
 										<li><a href="crab.html">Covert Crab</a></li>
 										<li><a href="beat.html">Beat Down</a></li>
-										<li><a href="particle.html">Particle Run</a></li>
+										<li><a href="particle.html">Wizard Roguelike Jam</a></li>
 										<li><a href="fps.html">Thesis Project</a></li>
 										<li><a href="nongame.html">Non Games Projects</a></li>
 										
@@ -55,43 +55,56 @@
 							<section class="post">
 								<header class="major">
 									
-									<p>Thesis Project - In Progress</p>
+									<p>Thesis Project - Using dynamic behaviour trees to add variation for AI
+										in immersive sim games</p>
                                     <span ><iframe width="560" height="315" src="https://www.youtube.com/embed/v1EUkgpp03M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
-
 								</header>
                             
 <br>
-                                    <p>For my final yera project I am currently investigating how to make varied AI for a fps immersive sim while keeping the their actions fair and predictable. This project has included making a fps stealth controller, a Theif: The Dark Project like lighting system for stealth and of course the guards behaviour which is implemented using unreal engines behaviour trees.</p>
+                                    <p>For my final year project I investigated how to make AI behaviour more vaired for stealth games (Inspired by Dishonored and Thief) while keeping their actions fair and predicatable. The project was made in UE5 
+										with C++ and consisted of a stealth focused player character, custom perception components and behaviour trees that adapt to a trait system. 
+									</p>
 									<p>The FPS stealth controller includes the following features:</p>
 									<ul>
 										<li>Leaning (in all 8 directions)<ul><li>You can lean with WASD and hold multiple directions at once</li><li>If you hold two inputs in a diagonal direction you don't lean as far as if only held in one direction  </li></ul></li>
 										<li>Stooping under objects when crouched (like in dishonored)<ul><li>When crouched as you move into an object with enough space for your character they will lower down to fit</li><li>Goes to the exact height needed no lower</li><li>You will dynamically go lower or higher as you move between cover (shown in video)</li></ul></li>
-										<li>Vaulting over objects to get higher or ontop of something </li>
-										<li>Step counting currently shown via headbobbing <ul><li>The number of steps you take changes if you're crouched, walking, running and can be changed in inspect</li><li>Its set up to be able to call a function at every step, this is used to create footstep sounds that the AI can hear and react to. How loud it is depends on how the player is moving.</li></ul></li>
-
+										<li>Vaulting over objects to navigate the environment </li>
+										<li>Step notifies, the number of steps you take changes if you're crouched, walking, running and notifies the AI perception</li>
 									  </ul>  
-										
 									</p>
-
-
 									<p>Guards can be assigned traits across the 4 categories of Perception, Relationship, Tenacity and Environment. These directly affect the guards behaviour with how they detect the player, perform their behaviours and react to the environment to give more variation to the AI while still allowing the player to know what they'll do through an inspection UI that lets them see the traits. </p>
+									<p>Perception traits affect the hearing and vision component, changing the scope of the two vision cones and the thresholds for audio detection. These traits can also change the detection
+										speed for the player detection system. There are 7 perception traits in the prototype. 
+									</p>
+									<div class="col-12"><span class="image fit"><img src="images/perceptiontraits.png" alt="" /></span></div>
+<br>
+									<p>Relationship traits affect how the AI will react when seeing other agents in different states, for the prototype I focused on when an agent sees the body of another with there being a reaction beneficial to the player and one detrimental. A dialogue bark
+										will also be played to let the player know that the trait has activated. </p>
+									<p>Tenacity traits traits directly affect the running of the behaviour tree, changing blackboard values and swapping out chunks of the behaviour tree such as the search routine with the pre-emptive trait that alters how an agent searches the environment. The images below show the regular search subtree followed by the pre-emptive trait subtree it gets replaced by.  </p>
+									<div class="box alt">
+                                        
+										<div class="row gtr-40 gtr-uniform">
+
+											<div class="col-4"><span class="image fit"><img src="images/search.png" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/searchpreemptive.png" alt="" /></span></div>
+										</div>
+									</div>
+									<p>Environmental traits are more of a wild card and run on a service allowing functionality to be more bespoke. The two traits I made for the prototype were being afraid of the dark and door aware. The first trait 
+									checks if the agent has been left in darkness and if so they will abandon their routine to run to the nearest lightsource, running around the level frantically if no light source is left. The second trait has the agent
+									keep track of if doors are meant to be open or closed and if this changes when they walk past they will change it back.	
+									</p>
 									<div class="box alt">
                                         
 										<div class="row gtr-50 gtr-uniform">
-
-                                            
 											<div class="col-12"><span class="image fit"><img src="images/widget2.png" alt="" /></span></div>
-											<p>There is a base behaviour tree with many of the states leading to dynamic behaviours that can be changed at runtime depending on the traits or reaction to the environment. The basic behaviour allows for patrolling, searching, chasing the player with direct combat being an element I will work on later.</p>
+											<p>There is a base behaviour tree with many of the states leading to dynamic behaviours that can be changed at runtime depending on the traits or reaction to the environment. The basic behaviour allows for patrolling, searching, and chasing the player.</p>
 											<div class="col-12"><span class="image fit"><img src="images/behaviourtree.png" alt="" /></span></div>
-											<p>I implemented a rudementory version of Theifs lighting system that lets the player hide in shadows, there are varying levels of light visibility depending on if the head torso and feet are within the light that change how quickly the detection meter of the guards fill up. The guard's light status is also accounted for allowing you to hide bodies in the dark or have them react to a light going out.</p>
-											<div class="col-12"><span class="image fit"><img src="images/light.png" alt="" /></span></div>
 
-
-
-
-<p> The github currently only has the movement code but the rest will be uploaded when the thesis is complete at the end of April or upon request.</p>
+<p> </p>
                                     <footer>
-                                        <a href="https://github.com/ArchieShortUni/FPSStealthPortfolio" class="button">Github Link</a>
+                                        <a href="https://github.com/Archie-Short/FPSStealthPortfolio" class="button">Github Link</a>
+										<a href="https://drive.google.com/file/d/1m36AsgnxGh9oYfMjipE9RcmWvkTTcEaG/view?usp=sharing" class="button">Project Paper</a>
+
                                     </footer>
 							</section>
 								</article>
